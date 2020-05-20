@@ -6,13 +6,19 @@ to check out his great work go to:
 
    https://sourceforge.net/projects/ezos/
    
-# Forked from ArcoLinuxD Gnome desktop
+# Forked from EZNIX
 
 This will be a personal setup of Archlinux. I make this available to anyone to use or change.
 
 This is a continual work in progress to try to create as close to a perfect base setup as I can.
 
 Scripts to achieve Archlinux Victory Edition the long way.
+
+This is a forked project from eznix
+
+to check out his great work go to:
+
+   https://sourceforge.net/projects/ezos/
 
 # Installation Process
 
