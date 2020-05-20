@@ -3,7 +3,7 @@
 # Victory Arch Installer - BIOS
 #
 # Forked from ezos, ezarch, by eznix. Find links to his work below.
-# Revision: 4.3 -- by eznix (https://sourceforge.net/projects/ezos/)
+# based on Revision: 4.3 -- by eznix (https://sourceforge.net/projects/ezos/)
 # (GNU/General Public License version 3.0)
 #
 #
@@ -27,7 +27,7 @@ welcome () {
   echo "=     Welcome to the VictoryLinux Arch Installer Script      ="
   echo "=                                                            ="
   echo "=     BIOS Edition                                           ="
-  echo "=     Version 4.3  (Development)                             ="
+  echo "=     Version 1.0  (beta)                                    ="
   echo "=                                                            ="
   echo "=                                                            ="
   echo "=                                                            ="
@@ -54,11 +54,11 @@ localestg () {
 usrname () { 
   clear
   echo -e "\n"
-  read -p "Type your user name, be exact, and press Enter: " USRNAME
+  read -p "Type your user name, be exact, all lower case, and press Enter: " USRNAME
   clear
   echo -e "\n"
   echo "User name set to "${USRNAME}"..."
-  sleep 2
+  sleep 5
   clear
 }
 #
@@ -66,11 +66,11 @@ usrname () {
 usrpwd () { 
   clear
   echo -e "\n"
-  read -p "Type your user password, be exact, and press Enter: " USRPWD
+  read -p "Type your password for user ${USRNAME}, be exact, and press Enter: " USRPWD
   clear
   echo -e "\n"
   echo "User password set to "${USRPWD}"..."
-  sleep 2
+  sleep 5
   clear
 }
 #
@@ -90,11 +90,11 @@ rtpwd () {
 hstname () { 
   clear
   echo -e "\n"
-  read -p "Type your hostname, be exact, and press Enter: " HSTNAME
+  read -p "Type your hostname (aka: computer name), be exact, and press Enter: " HSTNAME
   clear
   echo -e "\n"
   echo "Hostname set to "${HSTNAME}"..."
-  sleep 2
+  sleep 5
   clear
 }
 #
@@ -115,7 +115,7 @@ swapsize () {
     ;;
     *)
     echo "Invalid input..."
-    sleep 2
+    sleep 5
     unset SWPSIZE
     swapsize
     ;;
@@ -123,7 +123,7 @@ swapsize () {
   clear
   echo -e "\n"
   echo "SWAP Partition Set To "${SWPSIZE}""
-  sleep 2
+  sleep 5
   clear
 }
 #
@@ -144,7 +144,7 @@ rootsize () {
     ;;
     *)
     echo "Invalid input..."
-    sleep 2
+    sleep 5
     unset RTSIZE
     rootsize
     ;;
@@ -152,7 +152,7 @@ rootsize () {
   clear
   echo -e "\n"
   echo "Root Partition Set To "${RTSIZE}""
-  sleep 2
+  sleep 5
   clear
 }
 #
@@ -166,7 +166,7 @@ trgtdrvsd () {
   clear
   echo -e "\n"
   echo "Target device set to "${TRGTDRV}"..."
-  sleep 2
+  sleep 5
   clear
 }
 #
@@ -179,7 +179,7 @@ optmirrors () {
   clear
   echo -e "\n"
   echo "Mirrorlist optimized for 50 fastest..."
-  sleep 2
+  sleep 5
   clear
 }
 #
@@ -197,7 +197,7 @@ mkpartsd () {
   clear
   echo -e "\n"
   echo "Partitions created..."
-  sleep 2
+  sleep 5
   clear
 }
 #
@@ -210,7 +210,7 @@ frmtpartsd () {
   clear
   echo -e "\n"
   echo "Partitions formatted..."
-  sleep 2
+  sleep 5
   clear
 }
 #
@@ -224,7 +224,7 @@ mntpartsd () {
   clear
   echo -e "\n"
   echo "Mounted partitions..."
-  sleep 2
+  sleep 5
   clear
 }
 #
@@ -235,7 +235,7 @@ instbase () {
   clear
   echo -e "\n"
   echo "Pacstrap base system complete..."
-  sleep 2
+  sleep 5
   clear
 }
 #
@@ -246,7 +246,7 @@ instbase-lts () {
   clear
   echo -e "\n"
   echo "Pacstrap base system complete..."
-  sleep 2
+  sleep 5
   clear
 }
 #
@@ -302,7 +302,7 @@ sysconfig () {
   clear
   echo -e "\n"
   echo "Basic system config completed..."
-  sleep 2
+  sleep 5
   clear
 }
 #
@@ -316,7 +316,7 @@ instgrub () {
   clear
   echo -e "\n"
   echo "Grub installed & mkinicpio run..."
-  sleep 2
+  sleep 5
   clear
 }
 #
@@ -327,7 +327,7 @@ instxorg () {
   clear
   echo -e "\n"
   echo "Xorg installed installed..."
-  sleep 2
+  sleep 5
   clear
 }
 #
@@ -338,7 +338,7 @@ instgen () {
   clear
   echo -e "\n"
   echo "General packages installed..."
-  sleep 2
+  sleep 5
   clear
 }
 #
@@ -349,7 +349,7 @@ instmedia () {
   clear
   echo -e "\n"
   echo "Multimedia packages installed..."
-  sleep 2
+  sleep 5
   clear
 }
 #
@@ -357,12 +357,12 @@ instmedia () {
 instnet () {
   clear
   pacstrap /mnt b43-fwcutter broadcom-wl-dkms intel-ucode ipw2100-fw ipw2200-fw net-tools networkmanager networkmanager-openvpn nm-connection-editor network-manager-applet wget curl firefox thunderbird wireless_tools nfs-utils nilfs-utils dhclient dnsmasq dmraid dnsutils openvpn openssh openssl samba whois iwd filezilla avahi openresolv youtube-dl vsftpd wpa_supplicant
-  sleep 2
+  sleep 5
   arch-chroot /mnt systemctl enable NetworkManager
   clear
   echo -e "\n"
   echo "Networking packages installed..."
-  sleep 2
+  sleep 5
   clear
 }
 #
@@ -373,7 +373,7 @@ instfonts () {
   clear
   echo -e "\n"
   echo "Fonts packages installed..."
-  sleep 2
+  sleep 5
   clear
 }
 #
@@ -381,12 +381,12 @@ instfonts () {
 instprint () {
   clear
   pacstrap /mnt system-config-printer foomatic-db foomatic-db-engine gutenprint hplip simple-scan cups cups-pdf cups-filters cups-pk-helper ghostscript gsfonts python-pillow python-pyqt5 python-pip python-reportlab
-  sleep 2
+  sleep 5
   arch-chroot /mnt systemctl enable org.cups.cupsd.service
   clear
   echo -e "\n"
   echo "Printing packages installed..."
-  sleep 2
+  sleep 5
   clear
 }
 #
@@ -394,12 +394,12 @@ instprint () {
 instlxqt () {
   clear
   pacstrap /mnt lxqt openbox obconf-qt pcmanfm-qt lxqt-sudo breeze-icons qterminal kwrite networkmanager-qt qbittorrent pavucontrol-qt quodlibet kdenlive k3b xarchiver galculator polkit-qt5 packagekit-qt5 xscreensaver sddm sddm-kcm
-  sleep 2
+  sleep 5
   arch-chroot /mnt systemctl enable sddm
   clear
   echo -e "\n"
   echo "LXQt desktop installed..."
-  sleep 2
+  sleep 5
   clear
 }
 #
@@ -407,12 +407,12 @@ instlxqt () {
 instkde () {
 clear
   pacstrap /mnt plasma breeze-icons kwrite qbittorrent pavucontrol-qt quodlibet print-manager sweeper dolphin kdenlive k3b ark konsole gwenview okular kcalc packagekit-qt5 sddm sddm-kcm
-  sleep 2
+  sleep 5
   arch-chroot /mnt systemctl enable sddm
   clear
   echo -e "\n"
   echo "KDE Plasma desktop installed..."
-  sleep 2
+  sleep 5
   clear
 }
 #
@@ -420,12 +420,12 @@ clear
 instxfce () {
   clear
   pacstrap /mnt xfce4 xfce4-goodies galculator transmission-gtk pavucontrol xfburn asunder libburn libisofs libisoburn quodlibet xarchiver arc-gtk-theme arc-icon-theme gtk-engine-murrine adapta-gtk-theme polkit-gnome gnome-disk-utility gufw gnome-packagekit catfish lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings accountsservice
-  sleep 2
+  sleep 5
   arch-chroot /mnt systemctl enable lightdm
   clear
   echo -e "\n"
   echo "XFCE desktop installed..."
-  sleep 2
+  sleep 5
   clear
 }
 #
@@ -433,12 +433,12 @@ instxfce () {
 instmate () {
   clear
   pacstrap /mnt mate mate-extra mate-applet-dock adapta-gtk-theme arc-gtk-theme arc-icon-theme gtk-engine-murrine transmission-gtk brasero asunder quodlibet gnome-disk-utility gufw mate-polkit gnome-packagekit lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings accountsservice
-  sleep 2
+  sleep 5
   arch-chroot /mnt systemctl enable lightdm
   clear
   echo -e "\n"
   echo "Mate desktop installed..."
-  sleep 2
+  sleep 5
   clear
 }
 #
@@ -446,12 +446,12 @@ instmate () {
 instcinn () {
   clear
   pacstrap /mnt cinnamon cinnamon-translations gnome-terminal adwaita-icon-theme adapta-gtk-theme arc-gtk-theme arc-icon-theme gtk-engine-murrine gnome-keyring nemo nemo-share xed file-roller nemo-fileroller tmux tldr transmission-gtk brasero asunder quodlibet gnome-disk-utility gufw polkit-gnome gnome-packagekit evince viewnior lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings accountsservice
-  sleep 2
+  sleep 5
   arch-chroot /mnt systemctl enable lightdm
   clear
   echo -e "\n"
   echo "Cinnamon desktop installed..."
-  sleep 2
+  sleep 5
   clear
 }
 #
@@ -459,19 +459,19 @@ instcinn () {
 instgnome () {
   clear
   pacstrap /mnt gnome terminator
-  sleep 2
+  sleep 5
   arch-chroot /mnt systemctl enable gdm
   clear
   echo -e "\n"
   echo "Gnome desktop installed..."
-  sleep 2
+  sleep 5
   clear
 #
 #
 invalid () {
   echo -e "\n"
   echo "Invalid answer, Please try again"
-  sleep 2
+  sleep 5
 }
 #
 #
