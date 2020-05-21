@@ -353,7 +353,7 @@ instxorg () {
 #
 instgen () {
   clear
-  pacstrap /mnt linux-lts-headers dkms p7zip archiso haveged pacman-contrib pkgfile git diffutils usbutils jfsutils reiserfsprogs btrfs-progs f2fs-tools logrotate man-db man-pages mdadm perl s-nail texinfo which xfsprogs lsscsi sdparm sg3_utils smartmontools fuse2 fuse3 ntfs-3g exfat-utils gvfs gvfs-afc gvfs-goa gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb unrar unzip unace xz xdg-user-dirs grsync ddrescue dd_rescue testdisk hdparm htop rsync hardinfo bash-completion geany lsb-release polkit ufw bleachbit packagekit gparted qt5ct qt5-styleplugins papirus-icon-theme
+  pacstrap /mnt  dkms p7zip yay archiso haveged pacman-contrib pkgfile git diffutils usbutils jfsutils reiserfsprogs btrfs-progs f2fs-tools logrotate man-db man-pages mdadm perl s-nail texinfo which xfsprogs lsscsi sdparm sg3_utils smartmontools fuse2 fuse3 ntfs-3g exfat-utils gvfs gvfs-afc gvfs-goa gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb unrar unzip unace xz xdg-user-dirs grsync ddrescue dd_rescue testdisk hdparm htop rsync hardinfo bash-completion geany lsb-release polkit ufw bleachbit packagekit gparted qt5ct qt5-styleplugins papirus-icon-theme
   clear
   echo -e "\n"
   echo "General packages installed..."
@@ -364,7 +364,7 @@ instgen () {
 #
 instmedia () {
   clear
-  pacstrap /mnt pulseaudio vlc cdrtools gstreamer gst-libav gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-bad gst-plugins-ugly gstreamer-vaapi gst-transcoder xvidcore frei0r-plugins cdrdao dvdauthor transcode alsa-utils alsa-plugins alsa-firmware pulseaudio-alsa pulseaudio-equalizer pulseaudio-jack ffmpeg ffmpegthumbnailer libdvdcss gimp guvcview imagemagick flac faad2 faac mjpegtools x265 x264 lame sox mencoder
+  pacstrap /mnt pulseaudio vlc gstreamer gst-libav gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-bad gst-plugins-ugly gstreamer-vaapi gst-transcoder xvidcore frei0r-plugins cdrdao dvdauthor transcode alsa-utils alsa-plugins alsa-firmware pulseaudio-alsa pulseaudio-equalizer pulseaudio-jack ffmpeg ffmpegthumbnailer libdvdcss gimp guvcview imagemagick flac faad2 faac mjpegtools x265 x264 lame sox mencoder
   clear
   echo -e "\n"
   echo "Multimedia packages installed..."
@@ -477,7 +477,7 @@ instcinn () {
 #
 instgnome () {
   clear
-  pacstrap /mnt gnome terminator
+  pacstrap /mnt gnome terminator dconf-editor gnome-multi-writer gnome-nettool gnome-tweaks gnome-usage flatpak curl git meson onboard brave-bin
   sleep 5
   arch-chroot /mnt systemctl enable gdm
   clear
