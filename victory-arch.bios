@@ -87,7 +87,7 @@ rtpwd () {
   clear
   echo -e "\n"
   echo "Root password set to "${RTPWD}"..."
-  sleep 2
+  sleep 5
   clear
 }
 #
