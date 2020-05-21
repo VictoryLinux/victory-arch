@@ -317,10 +317,24 @@ instgrub () {
   arch-chroot /mnt pacman -Sy --noconfirm grub os-prober
   arch-chroot /mnt grub-install --target=i386-pc /dev/"${TRGTDRV}"
   arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
-  arch-chroot /mnt mkinitcpio -p linux-lts
+  arch-chroot /mnt mkinitcpio -p linux
   clear
   echo -e "\n"
   echo "Grub installed & mkinicpio run..."
+  sleep 5
+  clear
+}
+#
+#
+instgrub-lts () {
+  clear
+  arch-chroot /mnt pacman -Sy --noconfirm grub os-prober
+  arch-chroot /mnt grub-install --target=i386-pc /dev/"${TRGTDRV}"
+  arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
+  arch-chroot /mnt mkinitcpio -p linux-lts
+  clear
+  echo -e "\n"
+  echo "Grub + LTS installed & mkinicpio run..."
   sleep 5
   clear
 }
@@ -350,7 +364,7 @@ instgen () {
 #
 instmedia () {
   clear
-  pacstrap /mnt pulseaudio vlc simplescreenrecorder cdrtools gstreamer gst-libav gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-bad gst-plugins-ugly gstreamer-vaapi gst-transcoder xvidcore frei0r-plugins cdrdao dvdauthor transcode alsa-utils alsa-plugins alsa-firmware pulseaudio-alsa pulseaudio-equalizer pulseaudio-jack ffmpeg ffmpegthumbnailer libdvdcss gimp guvcview imagemagick flac faad2 faac mjpegtools x265 x264 lame sox mencoder
+  pacstrap /mnt pulseaudio vlc cdrtools gstreamer gst-libav gst-plugins-base gst-plugins-base-libs gst-plugins-good gst-plugins-bad gst-plugins-ugly gstreamer-vaapi gst-transcoder xvidcore frei0r-plugins cdrdao dvdauthor transcode alsa-utils alsa-plugins alsa-firmware pulseaudio-alsa pulseaudio-equalizer pulseaudio-jack ffmpeg ffmpegthumbnailer libdvdcss gimp guvcview imagemagick flac faad2 faac mjpegtools x265 x264 lame sox mencoder
   clear
   echo -e "\n"
   echo "Multimedia packages installed..."
