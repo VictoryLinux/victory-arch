@@ -37,6 +37,8 @@ Run these commands in this order:
 
 
     git clone https://github.com/VictoryLinux/victory-arch
+    
+    cd victory-arch
 
     bash victory-arch.bios (or .uefi)
     
